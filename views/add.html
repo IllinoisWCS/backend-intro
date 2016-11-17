@@ -1,13 +1,16 @@
-<form name="articleSubmission">
+<form>
+	<!-- {{error}} and {{successMessage}} are examples of Angular's 2-way databinding. Look in the AddController, you should see $scope.error and $scope.successMessage, both are string variables that can change at any time. So this view automatically knows to update with the newest successMessage contents because it has this Angular binding.-->
 	<p>{{error}}</p>
     <p>{{successMessage}}</p>
 	<md-input-container flex>
 		<label>Question</label>
+		<!-- ng-model is a special HTML attribute provided by Angular that allows us to bind whatever the user inputs in this text box to the $scope variable newQuestion's attribute question. Because this binding was set in AddController, both the model and the view will know that the user has updated the question attribute of newQuestion. -->
 		<input required type="text" name="question" ng-model="newQuestion.question" />
 	</md-input-container>
 	<md-input-container>
 		<label>Answer</label>
 		<input type="text" name="answer" ng-model="newQuestion.answer" />
 	</md-input-container>
+	<!-- ng-click is a special HTML attribute provided by Angular to execute a certain function defined in the Angular controller responsible for this view, in our case AddController. Thus, when the user clicks this button, $scope.addQuestion function will execute. -->
     <md-button class="md-raised md-primary" ng-click="addQuestion()">Add Question</md-button>
 </form>

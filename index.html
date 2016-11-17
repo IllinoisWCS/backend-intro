@@ -40,8 +40,10 @@
     <body ng-app="jeopardyApp">
         <div id="main" layout="column" ng-cloak>
             <md-content flex layout-padding>
+                <!-- The different routes we can take in our application - aka the different views -->
                 <a href="#/add"><md-button class="md-primary">Add</md-button></a>
                 <a href="#/list"><md-button class="md-primary">List</md-button></a>
+                <!-- Depending on which one the user clicked, the view contents will be loaded in this div. The views are stored in the views folder. They are HTML snippets that get swapped out each time a route changes. -->
                 <div ng-view></div>
             </md-content>
         </div>

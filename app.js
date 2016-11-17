@@ -35,11 +35,25 @@ angular.module('jeopardyApp', [
         });
 }])
 
+/**
+ * In Angular land, the source of all of our data is encapsulated in an object
+ * called a factory. So think of a factory as producing similarly structured pieces of data.
+ *
+ * So, the source of all of our data is Firebase. This is how we access the Firebase database of the Firebase project we
+ * initialized in index.html. We can then interact with the objects of this Firebase database as if it were an array.
+ * That is why we use $firebaseArray, which is a service provided to us from AngularFire, the library that incorporates common Firebase functionality
+ * with AngularJS.
+ * THis is our model.
+ */
 .factory('Questions', ['$firebaseArray', function($firebaseArray) {
     var reference = firebase.database().ref();
     return $firebaseArray(reference);
 }])
 
+/**
+ * In Angular land, the API that allows us to request certain data and do certain things to certain data points is encapsulated in a service.
+ * We can do things like retrieve all of the data points to display back to the user. We can update a data point. We can add a new data point.
+ */
 .service('QuestionService', ['Questions', function(Questions) {
     return {
         getQuestions: function() {
@@ -66,6 +80,10 @@ angular.module('jeopardyApp', [
     $scope.customMessage = 'Let\'s play Jeopardy.';
 }])
 
+/**
+ * Angular controllers are the interfaces between the service (API) and the view (all of those views/html files)
+ * See the last tutorial (web-II-complete) for more explanations on the specific data binding constructs we use.
+ */
 .controller('AddController', ['$scope', '$location', 'QuestionService', function($scope, $location, QuestionService) {
     $scope.newQuestion = {};
 

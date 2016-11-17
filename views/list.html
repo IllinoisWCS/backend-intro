@@ -1,4 +1,5 @@
 <md-list flex ng-init="initialize()">
+    <!-- ng-repeat is a special HTML attribute provided by Angular that lets us define one single view for multiple objects of the same type. Look in ListController, you'll see $scope.questions defined. That corresponds to questions here. We can define the same HTML snippet (aka a md-list-item) for all of the questions in the questions array. We can access individual questions' attributes (like question, answer, $id, etc) this way. -->
     <md-list-item ng-repeat="question in questions">
         <h2>{{question.question}}</h2>
         <p ng-if="question.answer.length > 0">{{question.answer}}</p>

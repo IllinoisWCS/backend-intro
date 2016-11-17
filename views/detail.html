@@ -1,4 +1,5 @@
 <form ng-init="initialize()">
+    <!-- {{question.question}}, {{error}} and {{successMessage}} are examples of Angular's 2-way databinding. Look in the DetailController, you should see $scope.error and $scope.successMessage, both are string variables that can change at any time. You should also see $scope.question, which is an object that has question, answer and timestamp fields. So this view automatically knows to update with the newest successMessage contents because it has this Angular binding.-->
     <h2>{{question.question}}</h2>
 	<p>{{error}}</p>
     <p>{{successMessage}}</p>
@@ -6,5 +7,6 @@
 		<label>Answer</label>
 		<input type="text" name="answer" ng-model="question.answer" />
 	</md-input-container>
+    <!-- ng-click is a special HTML attribute provided by Angular to execute a certain function defined in the Angular controller responsible for this view, in our case DetailController. Thus, when the user clicks this button, $scope.updateQuestion function will execute. -->
     <md-button ng-click="updateQuestion()">Save Answer</md-button>
 </form>
