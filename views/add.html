@@ -1,0 +1,13 @@
+<form name="articleSubmission">
+	<p>{{error}}</p>
+    <p>{{successMessage}}</p>
+	<md-input-container flex>
+		<label>Question</label>
+		<input required type="text" name="question" ng-model="newQuestion.question" />
+	</md-input-container>
+	<md-input-container>
+		<label>Answer</label>
+		<input type="text" name="answer" ng-model="newQuestion.answer" />
+	</md-input-container>
+    <md-button class="md-raised md-primary" ng-click="addQuestion()">Add Question</md-button>
+</form>

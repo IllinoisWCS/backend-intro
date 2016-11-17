@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Jeopardy!</title>
+
+        <!-- Angular Material style sheet -->
+        <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.css">
+
+        <!-- Angular Material requires Angular.js Libraries -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-route.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-sanitize.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-animate.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-aria.min.js"></script>
+        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.5/angular-messages.min.js"></script>
+
+        <!-- Angular Material Library -->
+        <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0/angular-material.min.js"></script>
+
+        <!-- Firebase -->
+        <script src="https://www.gstatic.com/firebasejs/3.6.1/firebase.js"></script>
+        <script>
+            // Initialize Firebase
+            var config = {
+                apiKey: "AIzaSyAmXb63_wOP1VK-cXkbYyIL9ZzCegtAavI",
+                authDomain: "ttfirebasedemo.firebaseapp.com",
+                databaseURL: "https://ttfirebasedemo.firebaseio.com",
+                storageBucket: "ttfirebasedemo.appspot.com",
+                messagingSenderId: "339094144665"
+            };
+            firebase.initializeApp(config);
+        </script>
+
+        <!-- AngularFire -->
+        <script src="https://cdn.firebase.com/libs/angularfire/2.1.0/angularfire.min.js"></script>
+
+        <!-- Our own script -->
+        <script src="app.js"></script>
+    </head>
+    <body ng-app="jeopardyApp">
+        <div id="main" layout="column" ng-cloak>
+            <md-content flex layout-padding>
+                <a href="#/add"><md-button class="md-primary">Add</md-button></a>
+                <a href="#/list"><md-button class="md-primary">List</md-button></a>
+                <div ng-view></div>
+            </md-content>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,10 @@
+<form ng-init="initialize()">
+    <h2>{{question.question}}</h2>
+	<p>{{error}}</p>
+    <p>{{successMessage}}</p>
+    <md-input-container>
+		<label>Answer</label>
+		<input type="text" name="answer" ng-model="question.answer" />
+	</md-input-container>
+    <md-button ng-click="updateQuestion()">Save Answer</md-button>
+</form>

@@ -1,0 +1,8 @@
+<md-list flex ng-init="initialize()">
+    <md-list-item ng-repeat="question in questions">
+        <h2>{{question.question}}</h2>
+        <p ng-if="question.answer.length > 0">{{question.answer}}</p>
+        <md-button ng-click="goto(question.$id)" ng-if="question.answer.length == 0">Answer Question</md-button>
+        <md-button ng-click="goto(question.$id)">View</md-button>
+    </md-list-item>
+</md-list>
